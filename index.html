@@ -362,6 +362,19 @@
             transform: rotate(180deg);
         }
 
+        .tap-hint {
+            font-size: 0.8em;
+            color: #667eea;
+            font-weight: 600;
+            animation: pulse 2s ease-in-out infinite;
+            margin-top: 8px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
         .accordion-content {
             overflow: hidden;
             display: none;
@@ -807,7 +820,6 @@
                     ${roadmap.length > 0 ? `
                         <div class="section">
                             <div class="section-title">🗺️ あなた専用3ヶ月ロードマップ</div>
-                            <p style="margin-bottom: 20px; color: #666;">各フェーズをクリックすると、超具体的な作業手順が表示されます👇</p>
                             ${roadmap.map((step, index) => `
                                 <div class="roadmap-step">
                                     <div class="roadmap-header" onclick="toggleAccordion(${index})">
@@ -819,10 +831,13 @@
                                                 ${(step.tools || []).map(tool => `<span class="tool-tag">${tool}</span>`).join('')}
                                             </div>
                                         </div>
-                                        <div class="accordion-icon" id="icon-${index}">▼</div>
+                                        <div style="text-align: right;">
+                                            <div class="accordion-icon ${index === 0 ? 'rotated' : ''}" id="icon-${index}">▼</div>
+                                            ${index !== 0 ? '<div class="tap-hint">▲ タップで詳細を見る</div>' : ''}
+                                        </div>
                                     </div>
-                                    
-                                    <div class="accordion-content" id="content-${index}">
+
+                                    <div class="accordion-content" id="content-${index}" style="${index === 0 ? 'display: block;' : ''}"
                                         <div style="background: #f0f4ff; padding: 20px; margin: 15px 20px 20px 20px; border-radius: 10px;">
                                             <h4 style="color: #667eea; margin-bottom: 15px; font-size: 1.1em;">📋 超具体的な作業手順</h4>
                                             ${step.detailed_steps && step.detailed_steps.length > 0 ? `
