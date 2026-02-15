@@ -928,6 +928,6 @@ class OracleEngine:
 ・実際の取り組みにあたっては、ご自身の判断と責任で行ってください
 ・税務・法務に関する相談は専門家にご確認ください
 
-Created by 高嶺泰志 | Target: 年収10億円への挑戦""",
+Created by 高嶺泰志""",
             timestamp=datetime.now(timezone.utc).isoformat()
         )

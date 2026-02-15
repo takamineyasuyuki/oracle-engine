@@ -40,7 +40,7 @@ async def lifespan(app: FastAPI):
     """Application lifespan manager"""
     logger.info("🚀 Oracle Engine - Phase 1 starting up...")
     logger.info("=" * 60)
-    logger.info("System initialized by: 高嶺泰志 (Target: 年収10億円)")
+    logger.info("System initialized by: 高嶺泰志")
     logger.info("Mission: MBTI-based AI business strategy engine")
     logger.info("=" * 60)
     logger.info("🌐 UI available at: http://127.0.0.1:8000/")
@@ -82,7 +82,6 @@ async def root():
         "message": "Oracle Engine - Phase 1",
         "status": "operational",
         "creator": "高嶺泰志",
-        "mission": "年収10億円への道筋を示す",
         "note": "index.html not found. Please access API docs at /docs",
         "endpoints": {
             "health": "/health",

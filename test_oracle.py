@@ -160,7 +160,7 @@ def main():
     """Run all tests"""
     print("\n" + "🚀" * 40)
     print("  ORACLE ENGINE - PHASE 1 - TEST SUITE")
-    print("  Created by: 高嶺泰志 (Target: 年収10億円)")
+    print("  Created by: 高嶺泰志")
     print("🚀" * 40)
     
     try:
