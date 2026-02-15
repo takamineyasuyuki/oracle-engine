@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle Engine - Phase 1 | MBTI診断</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .header .mission {
+            margin-top: 15px;
+            font-size: 0.95em;
+            opacity: 0.8;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .step {
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 0.6s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .step.hidden {
+            display: none;
+        }
+
+        .step-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1e3c72;
+        }
+
+        .mbti-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .mbti-btn {
+            padding: 15px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .mbti-btn:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+            transform: translateY(-2px);
+        }
+
+        .mbti-btn.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .device-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .device-card {
+            padding: 20px;
+            border: 3px solid #ddd;
+            border-radius: 15px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .device-card:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .device-card.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .device-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .question {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f9fafb;
+            border-radius: 10px;
+        }
+
+        .question-text {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1e3c72;
+            line-height: 1.6;
+        }
+
+        .scale-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .scale {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .scale-btn {
+            width: 60px;
+            height: 60px;
+            border: 3px solid #ddd;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.3em;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .scale-btn:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+            transform: scale(1.1);
+        }
+
+        .scale-btn.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            transform: scale(1.15);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn {
+            padding: 15px 40px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .btn:hover:not(:disabled) {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .result {
+            animation: slideUp 0.6s;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .archetype-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border-radius: 20px;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1e3c72;
+        }
+
+        .list-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .roadmap-step {
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s;
+        }
+
+        .roadmap-step:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .roadmap-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            border-left: 5px solid #667eea;
+            background: #fafafa;
+            transition: background 0.3s;
+        }
+
+        .roadmap-header:hover {
+            background: #f0f4ff;
+        }
+
+        .accordion-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s;
+            color: #667eea;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+
+        .accordion-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            overflow: hidden;
+            display: none;
+        }
+
+        .roadmap-phase {
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .roadmap-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+
+        .roadmap-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tool-tag {
+            padding: 5px 12px;
+            background: #e0e7ff;
+            color: #667eea;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .error-message {
+            background: #fee;
+            border: 2px solid #fcc;
+            color: #c33;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔮 Oracle Engine</h1>
+            <div class="subtitle">MBTI診断 × AI副業ロードマップ</div>
+            <div class="mission">Created by 高嶺泰志 | Target: 年収10億円</div>
+        </div>
+
+        <div class="content">
+            <!-- Step 1: MBTI Selection -->
+            <div id="step1" class="step">
+                <div class="step-title">📋 STEP 1: あなたのMBTIタイプを選択してください</div>
+                <div class="mbti-grid">
+                    <button class="mbti-btn" data-mbti="INTJ">INTJ</button>
+                    <button class="mbti-btn" data-mbti="INTP">INTP</button>
+                    <button class="mbti-btn" data-mbti="ENTJ">ENTJ</button>
+                    <button class="mbti-btn" data-mbti="ENTP">ENTP</button>
+                    <button class="mbti-btn" data-mbti="INFJ">INFJ</button>
+                    <button class="mbti-btn" data-mbti="INFP">INFP</button>
+                    <button class="mbti-btn" data-mbti="ENFJ">ENFJ</button>
+                    <button class="mbti-btn" data-mbti="ENFP">ENFP</button>
+                    <button class="mbti-btn" data-mbti="ISTJ">ISTJ</button>
+                    <button class="mbti-btn" data-mbti="ISFJ">ISFJ</button>
+                    <button class="mbti-btn" data-mbti="ESTJ">ESTJ</button>
+                    <button class="mbti-btn" data-mbti="ESFJ">ESFJ</button>
+                    <button class="mbti-btn" data-mbti="ISTP">ISTP</button>
+                    <button class="mbti-btn" data-mbti="ISFP">ISFP</button>
+                    <button class="mbti-btn" data-mbti="ESTP">ESTP</button>
+                    <button class="mbti-btn" data-mbti="ESFP">ESFP</button>
+                </div>
+                <button id="next1" class="btn" disabled>次へ</button>
+            </div>
+
+            <!-- Step 2: Device Selection -->
+            <div id="step2" class="step hidden">
+                <div class="step-title">💻 STEP 2: 使用デバイスを選択してください</div>
+                <div class="device-options">
+                    <div class="device-card" data-device="PC_MAC">
+                        <div class="device-icon">🍎</div>
+                        <div><strong>Mac</strong></div>
+                        <div style="font-size: 0.9em; color: #666;">MacBook / iMac</div>
+                    </div>
+                    <div class="device-card" data-device="PC_WINDOWS">
+                        <div class="device-icon">🪟</div>
+                        <div><strong>Windows PC</strong></div>
+                        <div style="font-size: 0.9em; color: #666;">Windows 10/11</div>
+                    </div>
+                    <div class="device-card" data-device="MOBILE_ONLY">
+                        <div class="device-icon">📱</div>
+                        <div><strong>スマホのみ</strong></div>
+                        <div style="font-size: 0.9em; color: #666;">iPhone / Android</div>
+                    </div>
+                </div>
+                <button id="next2" class="btn" disabled>次へ</button>
+            </div>
+
+            <!-- Step 3: Psychometric Questions -->
+            <div id="step3" class="step hidden">
+                <div class="step-title">🧠 STEP 3: ビジネス特性診断（5問）</div>
+                <div id="questions-container"></div>
+                <button id="diagnose" class="btn" disabled>診断結果を見る</button>
+            </div>
+
+            <!-- Loading -->
+            <div id="loading" class="step hidden">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <div style="font-size: 1.2em; font-weight: 600;">最新のAI副業トレンドを検索中...</div>
+                    <div style="margin-top: 10px; color: #666;">あなた専用のロードマップを生成しています</div>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div id="result" class="step hidden"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://127.0.0.1:8000';
+        let selectedMBTI = null;
+        let selectedDevice = null;
+        let questions = [];
+        let responses = [];
+
+        // MBTI Selection
+        document.querySelectorAll('.mbti-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.mbti-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                selectedMBTI = btn.dataset.mbti;
+                document.getElementById('next1').disabled = false;
+            });
+        });
+
+        document.getElementById('next1').addEventListener('click', () => {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        });
+
+        // Device Selection
+        document.querySelectorAll('.device-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.device-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                selectedDevice = card.dataset.device;
+                document.getElementById('next2').disabled = false;
+            });
+        });
+
+        document.getElementById('next2').addEventListener('click', async () => {
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.remove('hidden');
+            
+            // Fetch questions
+            try {
+                const response = await fetch(`${API_BASE}/questions/${selectedMBTI}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                questions = data.questions || [];
+                
+                if (questions.length === 0) {
+                    throw new Error('質問データが取得できませんでした');
+                }
+                
+                renderQuestions();
+            } catch (error) {
+                console.error('Error fetching questions:', error);
+                document.getElementById('questions-container').innerHTML = `
+                    <div class="error-message">
+                        <strong>エラー:</strong> 質問の取得に失敗しました。<br>
+                        サーバーが起動しているか確認してください。<br>
+                        <small>${error.message}</small>
+                    </div>
+                `;
+            }
+        });
+
+        function renderQuestions() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = '';
+            
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                
+                // q.text を使用（バックエンドから送られるキー）
+                const questionText = q.text || q.question || '質問が読み込めませんでした';
+                const scaleLow = q.scale_low || '当てはまらない';
+                const scaleHigh = q.scale_high || '当てはまる';
+                
+                questionDiv.innerHTML = `
+                    <div class="question-text">Q${index + 1}: ${questionText}</div>
+                    <div class="scale-labels">
+                        <span>${scaleLow}</span>
+                        <span>${scaleHigh}</span>
+                    </div>
+                    <div class="scale" data-question="${index}">
+                        <button class="scale-btn" data-score="1">1</button>
+                        <button class="scale-btn" data-score="2">2</button>
+                        <button class="scale-btn" data-score="3">3</button>
+                        <button class="scale-btn" data-score="4">4</button>
+                        <button class="scale-btn" data-score="5">5</button>
+                    </div>
+                `;
+                container.appendChild(questionDiv);
+            });
+
+            // Add scale button listeners
+            document.querySelectorAll('.scale-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const scale = btn.parentElement;
+                    const questionIndex = parseInt(scale.dataset.question);
+                    const score = parseInt(btn.dataset.score);
+                    
+                    scale.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                    
+                    responses[questionIndex] = { question_id: questionIndex + 1, score: score };
+                    
+                    // Check if all answered
+                    const answeredCount = responses.filter(r => r).length;
+                    if (answeredCount === questions.length) {
+                        document.getElementById('diagnose').disabled = false;
+                    }
+                });
+            });
+        }
+
+        document.getElementById('diagnose').addEventListener('click', async () => {
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('loading').classList.remove('hidden');
+            
+            try {
+                const validResponses = responses.filter(r => r);
+                
+                const response = await fetch(`${API_BASE}/diagnose`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        mbti: selectedMBTI,
+                        device: selectedDevice,
+                        psychometric_responses: validResponses
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                displayResult(result);
+                
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('result').classList.remove('hidden');
+                
+                // Scroll to result
+                document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+            } catch (error) {
+                console.error('Error during diagnosis:', error);
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('result').classList.remove('hidden');
+                document.getElementById('result').innerHTML = `
+                    <div class="error-message">
+                        <strong>エラー:</strong> 診断の実行に失敗しました。<br>
+                        サーバーが起動しているか確認してください。<br>
+                        <small>${error.message}</small>
+                    </div>
+                `;
+            }
+        });
+
+        function displayResult(data) {
+            const resultDiv = document.getElementById('result');
+            
+            const roadmap = data.strategic_roadmap || [];
+            const strengths = data.strengths || [];
+            const weaknesses = data.weaknesses || [];
+            const trends = data.latest_trends || [];
+            
+            let html = `
+                <div class="result">
+                    <div class="archetype-badge">🎯 ${data.archetype || '不明'}</div>
+                    <p style="font-size: 1.1em; margin-bottom: 20px;">${data.archetype_description || ''}</p>
+                    
+                    ${data.psychometric_insight ? `
+                        <div class="section">
+                            <div class="section-title">🧠 あなたの診断結果</div>
+                            <p>${data.psychometric_insight}</p>
+                        </div>
+                    ` : ''}
+                    
+                    ${strengths.length > 0 ? `
+                        <div class="section">
+                            <div class="section-title">✅ ビジネス上の強み</div>
+                            ${strengths.map(s => `<div class="list-item">• ${s}</div>`).join('')}
+                        </div>
+                    ` : ''}
+                    
+                    ${weaknesses.length > 0 ? `
+                        <div class="section">
+                            <div class="section-title">⚠️ ビジネス上の弱み</div>
+                            ${weaknesses.map(w => `<div class="list-item">• ${w}</div>`).join('')}
+                        </div>
+                    ` : ''}
+                    
+                    ${trends.length > 0 ? `
+                        <div class="section">
+                            <div class="section-title">📰 最新トレンド（2026年2月）</div>
+                            ${trends.map(t => `
+                                <div style="margin-bottom: 15px; padding: 15px; background: white; border-radius: 8px;">
+                                    <div style="font-weight: 600; color: #1e3c72; margin-bottom: 5px;">${t.title || ''}</div>
+                                    <div style="font-size: 0.9em; color: #666;">${t.snippet || ''}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+                    
+                    ${roadmap.length > 0 ? `
+                        <div class="section">
+                            <div class="section-title">🗺️ あなた専用3ヶ月ロードマップ</div>
+                            <p style="margin-bottom: 20px; color: #666;">各フェーズをクリックすると、超具体的な作業手順が表示されます👇</p>
+                            ${roadmap.map((step, index) => `
+                                <div class="roadmap-step">
+                                    <div class="roadmap-header" onclick="toggleAccordion(${index})">
+                                        <div style="flex: 1;">
+                                            <div class="roadmap-phase">${step.phase || ''}</div>
+                                            <div class="roadmap-title">${step.title || ''}</div>
+                                            <p style="margin: 10px 0;">${step.description || ''}</p>
+                                            <div class="roadmap-tools">
+                                                ${(step.tools || []).map(tool => `<span class="tool-tag">${tool}</span>`).join('')}
+                                            </div>
+                                        </div>
+                                        <div class="accordion-icon" id="icon-${index}">▼</div>
+                                    </div>
+                                    
+                                    <div class="accordion-content" id="content-${index}">
+                                        <div style="background: #f0f4ff; padding: 20px; margin: 15px 20px 20px 20px; border-radius: 10px;">
+                                            <h4 style="color: #667eea; margin-bottom: 15px; font-size: 1.1em;">📋 超具体的な作業手順</h4>
+                                            ${step.detailed_steps && step.detailed_steps.length > 0 ? `
+                                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                                    ${step.detailed_steps.map((stepText, stepIndex) => `
+                                                        <li style="margin-bottom: 15px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+                                                            <div style="display: flex; align-items: start; gap: 10px;">
+                                                                <div style="background: #667eea; color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.85em; font-weight: 700; flex-shrink: 0;">
+                                                                    ${stepIndex + 1}
+                                                                </div>
+                                                                <div style="color: #1e3c72; line-height: 1.7; flex: 1;">
+                                                                    ${stepText}
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    `).join('')}
+                                                </ul>
+                                            ` : '<p style="color: #666;">詳細手順を準備中です</p>'}
+                                            <p style="margin-top: 15px; font-weight: 600; padding: 15px; background: #d1fae5; border-radius: 8px; color: #065f46;">
+                                                ✅ 完了すると: ${step.expected_outcome || ''}
+                                            </p>
+
+                                            ${step.ai_prompt ? `
+                                                <div style="margin-top: 20px; background: white; border: 2px solid #667eea; border-radius: 10px; overflow: hidden;">
+                                                    <div style="background: #667eea; color: white; padding: 12px 15px; font-weight: 700; font-size: 1em;">
+                                                        🤖 このステップをAIに相談しよう！
+                                                    </div>
+                                                    <div style="padding: 15px;">
+                                                        <p style="font-size: 0.9em; color: #666; margin-bottom: 10px;">以下をコピーしてChatGPTやClaudeに送ると、さらに具体的なアドバイスがもらえます：</p>
+                                                        <pre id="prompt-text-${index}" style="background: #f8f9fa; padding: 15px; border-radius: 8px; font-size: 0.85em; line-height: 1.6; white-space: pre-wrap; word-wrap: break-word; color: #1e3c72; border: 1px solid #e5e7eb; max-height: 200px; overflow-y: auto;">${step.ai_prompt}</pre>
+                                                        <button onclick="copyPrompt(${index})" style="margin-top: 10px; padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95em; transition: all 0.3s;" onmouseover="this.style.background='#5568d3'" onmouseout="this.style.background='#667eea'">
+                                                            📋 プロンプトをコピー
+                                                        </button>
+                                                        <span id="copy-feedback-${index}" style="margin-left: 10px; color: #10b981; font-weight: 600; opacity: 0; transition: opacity 0.3s;"></span>
+                                                    </div>
+                                                </div>
+                                            ` : ''}
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+                    
+                    ${data.automation_teaser ? `
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 15px; margin-top: 30px;">
+                            <div style="font-size: 1.8em; font-weight: 800; margin-bottom: 15px;">🛠️ ${data.automation_teaser.tool_name || ''}</div>
+                            <div style="background: rgba(255,255,255,0.3); height: 30px; border-radius: 15px; overflow: hidden; margin: 15px 0;">
+                                <div style="background: #10b981; height: 100%; width: ${data.automation_teaser.progress_percentage || 0}%; display: flex; align-items: center; justify-content: center; font-weight: 700; transition: width 1s;">
+                                    ${data.automation_teaser.progress_percentage || 0}% 完成
+                                </div>
+                            </div>
+                            <p style="font-size: 1.1em; margin-bottom: 15px;">⏱️ ${data.automation_teaser.time_saved || ''}</p>
+                            <div style="margin-top: 15px;">
+                                ${(data.automation_teaser.key_features || []).map(f => `
+                                    <div style="padding: 8px 0; padding-left: 25px; position: relative;">
+                                        <span style="position: absolute; left: 0; font-weight: 700;">✓</span>
+                                        ${f}
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <p style="margin-top: 20px; font-size: 1.1em; font-weight: 600;">🚀 ${data.automation_teaser.availability || ''}</p>
+                        </div>
+                    ` : ''}
+                    
+                    ${data.disclaimer ? `
+                        <div style="background: #fef3c7; border: 2px solid #f59e0b; padding: 20px; border-radius: 10px; margin-top: 30px;">
+                            <div style="font-weight: 700; color: #f59e0b; margin-bottom: 10px;">⚖️ 重要な免責事項</div>
+                            <p style="white-space: pre-line;">${data.disclaimer}</p>
+                        </div>
+                    ` : ''}
+                    
+                    <div style="background: #dc2626; color: white; padding: 20px; text-align: center; font-size: 1.3em; font-weight: 700; border-radius: 10px; margin-top: 20px;">
+                        🔥 今すぐ行動を開始してください
+                    </div>
+                </div>
+            `;
+            
+            resultDiv.innerHTML = html;
+        }
+
+        function copyPrompt(index) {
+            const text = document.getElementById(`prompt-text-${index}`).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const feedback = document.getElementById(`copy-feedback-${index}`);
+                feedback.textContent = 'コピーしました！';
+                feedback.style.opacity = '1';
+                setTimeout(() => { feedback.style.opacity = '0'; }, 2000);
+            });
+        }
+
+        function toggleAccordion(index) {
+            const content = document.getElementById(`content-${index}`);
+            const icon = document.getElementById(`icon-${index}`);
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                icon.classList.add('rotated');
+            } else {
+                content.style.display = 'none';
+                icon.classList.remove('rotated');
+            }
+        }
+    </script>
+</body>
+</html>
