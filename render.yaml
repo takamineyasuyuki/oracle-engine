@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: oracle-engine
+    name: oracle-engine-uaes
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
