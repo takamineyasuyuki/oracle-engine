@@ -91,6 +91,15 @@ async def root():
     }
 
 
+@app.get("/og-image.png")
+async def og_image():
+    """Serve the OGP image"""
+    img_path = Path(__file__).parent.parent / "og-image.png"
+    if img_path.exists():
+        return FileResponse(img_path, media_type="image/png")
+    raise HTTPException(status_code=404, detail="OG image not found")
+
+
 @app.get("/privacy")
 async def privacy():
     """Serve the privacy policy page"""
