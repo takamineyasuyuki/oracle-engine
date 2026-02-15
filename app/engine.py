@@ -492,7 +492,7 @@ class OracleEngine:
                     phase=f"🚀 支配フェーズ（7〜12週目）【{mbti_str}特別戦略】",
                     title="マルチAIエージェントで月100万円の完全自動収益マシン",
                     description="複数のAI APIを組み合わせたエージェントシステムを構築。案件獲得→制作→納品まで全自動化し、月100万円の不労所得を実現します。",
-                    tools=["LangChain 1.2", "Claude API（Sonnet 4.5: $3/$15 per 1M tokens）", "GitHub Actions", "Stripe API"],
+                    tools=["LangChain 1.2", "Manus AI", "Claude API（Sonnet 4.5: $3/$15 per 1M tokens）", "GitHub Actions", "Stripe API"],
                     expected_outcome="月100万円の自動収益。あなたが寝ている間もAIが稼ぎ続ける。",
                     detailed_steps=[
                         "LangChain 1.2でマルチステップAIエージェントを構築 → 入力テーマから自動で記事・画像・動画台本を一括生成",
@@ -527,7 +527,7 @@ class OracleEngine:
                     phase=f"⚡ 加速フェーズ（3〜6週目）【{mbti_str}特別戦略】",
                     title="No-CodeツールでAIサービスを自動化、月20万円達成",
                     description="MakeやZapierを使ってノーコードで自動化フローを構築。分析力で最適なワークフローを設計し、手作業をゼロに。",
-                    tools=["Make (Integromat)", "Zapier", "Notion API", "LINE公式"],
+                    tools=["Make (Integromat)", "Zapier", "Manus AI", "Notion API", "LINE公式"],
                     expected_outcome="月15〜20万円の半自動収益。分析力×自動化で効率最大化。",
                     detailed_steps=[
                         "make.comでアカウント作成 → 無料プラン（月1,000クレジット）で自動化シナリオを作成開始",
@@ -542,7 +542,7 @@ class OracleEngine:
                     phase=f"🚀 支配フェーズ（7〜12週目）【{mbti_str}特別戦略】",
                     title="クラウドSaaS型サービスで月50万円の仕組み化",
                     description="No-Codeで構築した自動化フローをサブスク型サービスとして提供。スマホ管理だけで月50万円の継続収入を実現。",
-                    tools=["Bubble", "Stripe", "Make", "ChatGPT API"],
+                    tools=["Bubble", "Stripe", "Make", "Manus AI", "ChatGPT API"],
                     expected_outcome="月50万円のサブスク収益。完全クラウド運用でどこでも稼げる。",
                     detailed_steps=[
                         "Bubble（Starterプラン月$29〜）でシンプルなWebアプリを構築 → AIコンテンツ生成ツールをSaaS化",
@@ -700,7 +700,7 @@ class OracleEngine:
                     phase=f"🚀 支配フェーズ（7〜12週目）【{mbti_str}特別戦略】",
                     title="AI業務改善パッケージで月60万円の安定経営",
                     description="標準化されたAI業務改善パッケージを開発。堅実な営業と確実な成果で法人契約を拡大し、月60万円を達成します。",
-                    tools=["Python", "Streamlit", "Notion", "Zoom", "freee"],
+                    tools=["Python", "Streamlit", "Manus AI", "Notion", "Zoom", "freee"],
                     expected_outcome="月60万円の安定収益。法人クライアントとの長期契約で盤石な基盤。",
                     detailed_steps=[
                         "業種別AI改善パッケージを3種類作成：飲食店/小売/士業 → それぞれの業務フローを分析",
