@@ -91,6 +91,15 @@ async def root():
     }
 
 
+@app.get("/privacy")
+async def privacy():
+    """Serve the privacy policy page"""
+    privacy_path = Path(__file__).parent.parent / "privacy.html"
+    if privacy_path.exists():
+        return FileResponse(privacy_path)
+    raise HTTPException(status_code=404, detail="Privacy policy not found")
+
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
