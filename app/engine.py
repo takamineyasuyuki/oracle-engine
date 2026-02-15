@@ -462,7 +462,7 @@ class OracleEngine:
                     title="ChatGPT（無料版）で最初のAIサービスを構築、月5万円を手に入れる",
                     description="あなたの論理的思考を活かして、ChatGPT（無料版）でAIコンテンツ生成を開始。まずは無料版で十分始められます。ココナラで「AIコンテンツ生成サービス」を出品し、月5〜10万円を目指します。",
                     tools=["ChatGPT（無料版）", "VS Code", "ココナラ"],
-                    expected_outcome="初月で5〜10万円の収益。自動化システムが24時間働き続ける快感を体験。",
+                    expected_outcome="目標: 初月で5〜10万円の収益。自動化の仕組みを構築。",
                     detailed_steps=[
                         "chat.openai.comをブラウザで開く → Googleアカウントで無料登録 → すぐにChatGPTが使える状態になる",
                         "ChatGPTに「キャッチコピーを100個考えて」「ブログ記事を書いて」など指示を出す練習 → プロンプトのコツを掴む",
@@ -479,7 +479,7 @@ class OracleEngine:
                     title="データ分析で需要を可視化、月30万円の自動販売機を構築",
                     description="Google Trendsで需要が高いキーワードを特定し、専用自動化ツールを作成。SaaSとして月額課金で販売します。",
                     tools=["Google Trends", "Streamlit", "Stripe"],
-                    expected_outcome="月30〜50万円の安定収益。データ駆動型の意思決定で無駄ゼロ。",
+                    expected_outcome="目標: 月30〜50万円の収益。データ駆動型で無駄を減らす。",
                     detailed_steps=[
                         "trends.google.comで「AI 副業」「ChatGPT 使い方」などを検索 → 上昇トレンドのキーワードをExcelに記録",
                         "需要1位のテーマで専用ツール作成 → Streamlit（Python製Webフレームワーク）でブラウザから使えるWebアプリ化",
@@ -494,7 +494,7 @@ class OracleEngine:
                     title="マルチAIエージェントで月100万円の完全自動収益マシン",
                     description="複数のAI APIを組み合わせたエージェントシステムを構築。案件獲得→制作→納品まで全自動化し、月100万円の不労所得を実現します。",
                     tools=["LangChain 1.2", "Manus AI", "Claude API（Sonnet 4.5: $3/$15 per 1M tokens）", "GitHub Actions", "Stripe API"],
-                    expected_outcome="月100万円の自動収益。あなたが寝ている間もAIが稼ぎ続ける。",
+                    expected_outcome="目標: 月100万円の収益。AIで作業時間を最小化。",
                     detailed_steps=[
                         "LangChain 1.2でマルチステップAIエージェントを構築 → 入力テーマから自動で記事・画像・動画台本を一括生成",
                         "GitHub Actionsで毎日定時実行スケジュールを設定 → トレンドキーワード自動収集 → コンテンツ自動生成",
@@ -513,14 +513,15 @@ class OracleEngine:
                     title="スマホ×クラウドAIで論理的に月5万円を構築",
                     description="あなたの分析力を活かし、ChatGPTアプリとNotion連携でクラウド完結の自動化フローを作成。データに基づく戦略で最短ルートを攻めます。",
                     tools=["ChatGPT（無料版）アプリ", "Notion", "ココナラアプリ", "Googleスプレッドシート"],
-                    expected_outcome="初月で3〜5万円の収益。スマホだけでも論理的に稼げることを実証。",
+                    expected_outcome="目標: 初月で3〜5万円の収益。スマホだけでも始められる。",
                     detailed_steps=[
                         "App StoreからChatGPTアプリをダウンロード（無料版でOK）→ アカウント作成 → すぐに使い始められる",
                         "Notionアプリをインストール → 「AI副業管理DB」を作成 → テンプレート：案件名/単価/ステータス/納期",
                         "ChatGPTに「ビジネス文書作成の専門家として振る舞って」と指示 → プロンプトテンプレートを5種類作成しNotionに保存",
                         "ココナラアプリで出品：『AIで企画書・提案書を作成します』→ 価格8,000円 → 納期2日",
                         "受注→ChatGPTで生成→Googleドキュメントで整形→PDF納品。全工程スマホ完結。",
-                        "週3件受注で月12件 × 6,240円（手数料22%引後）= 月74,880円達成"
+                        "週3件受注で月12件 × 6,240円（手数料22%引後）= 月74,880円達成",
+                        "💡 慣れてきたらChatGPT Plus（月額約3,400円）に課金するとGPT-5が使えて品質・速度UP"
                     ],
                     ai_prompt=self._prompt("スマホ副業の専門コンサルタント", "スマホだけでAI副業を始めます。ChatGPTアプリを使ってココナラで企画書・提案書作成サービスを出品したいです。", ["スマホだけで完結する企画書・提案書の制作フロー（受注から納品まで）", "ChatGPTに送る最強のプロンプトテンプレート（企画書/提案書/報告書の3種類）", "ココナラで目立つ出品タイトルと説明文のテンプレート"], mbti_str),
                 ),
@@ -529,7 +530,7 @@ class OracleEngine:
                     title="No-CodeツールでAIサービスを自動化、月20万円達成",
                     description="MakeやZapierを使ってノーコードで自動化フローを構築。分析力で最適なワークフローを設計し、手作業をゼロに。",
                     tools=["Make (Integromat)", "Zapier", "Manus AI", "Notion API", "LINE公式"],
-                    expected_outcome="月15〜20万円の半自動収益。分析力×自動化で効率最大化。",
+                    expected_outcome="目標: 月15〜20万円の収益。自動化で効率を高める。",
                     detailed_steps=[
                         "make.comでアカウント作成 → 無料プラン（月1,000クレジット）で自動化シナリオを作成開始",
                         "シナリオ：Googleフォーム受付 → ChatGPT API自動処理 → 結果をメール自動送信",
@@ -544,7 +545,7 @@ class OracleEngine:
                     title="クラウドSaaS型サービスで月50万円の仕組み化",
                     description="No-Codeで構築した自動化フローをサブスク型サービスとして提供。スマホ管理だけで月50万円の継続収入を実現。",
                     tools=["Bubble", "Stripe", "Make", "Manus AI", "ChatGPT API"],
-                    expected_outcome="月50万円のサブスク収益。完全クラウド運用でどこでも稼げる。",
+                    expected_outcome="目標: 月50万円の収益。クラウド運用でどこでも作業可能に。",
                     detailed_steps=[
                         "Bubble（Starterプラン月$29〜）でシンプルなWebアプリを構築 → AIコンテンツ生成ツールをSaaS化",
                         "月額制プラン設定：個人(2,980円)/ビジネス(9,800円) → Stripe決済を連携",
@@ -567,7 +568,7 @@ class OracleEngine:
                     title="共感力×AIで心に刺さるコンテンツを量産、月5万円を達成",
                     description="あなたの深い共感力を武器に、AIと組み合わせて感情に響くコンテンツを作成。人の悩みに寄り添うサービスで高単価を実現します。",
                     tools=["ChatGPT（無料版）", "Notion", "Canva（無料版）", "ココナラ"],
-                    expected_outcome="初月で5〜8万円の収益。あなたの共感力がお金に変わる体験。",
+                    expected_outcome="目標: 初月で5〜8万円の収益。共感力を活かしたサービス。",
                     detailed_steps=[
                         "ChatGPT（無料版）にアクセス → 「あなたは共感力の高いライターです。読者の感情に寄り添った文章を書いてください」というシステムプロンプトを作成",
                         "ココナラで出品：『心に響く自己紹介文・プロフィールを作成します』→ 価格10,000円 → 納期2日",
@@ -584,7 +585,7 @@ class OracleEngine:
                     title="AI×コーチング型コンテンツで月30万円のファンビジネス",
                     description="あなたのビジョンと影響力を活かし、AIサポート付きのオンラインコーチングやコミュニティ運営で安定収益を構築します。",
                     tools=["Zoom", "ChatGPT API", "Notion", "Stripe", "LINE公式"],
-                    expected_outcome="月25〜30万円の安定収益。ファンがファンを呼ぶ好循環。",
+                    expected_outcome="目標: 月25〜30万円の収益。ファンを増やす好循環を目指す。",
                     detailed_steps=[
                         "LINE公式アカウントを開設（無料プラン月200通・ライト月5,000円で5,000通）→ ステップ配信で「AI活用術」を7日間無料講座として配信",
                         "ChatGPTで個別相談用のアドバイステンプレートを作成 → カスタマイズして1人30分のZoom相談を提供",
@@ -600,7 +601,7 @@ class OracleEngine:
                     title="オンラインスクール×AIで月80万円の教育ビジネス",
                     description="あなたのビジョンを体系化したオンライン講座を開設。AI活用で運営を効率化し、影響力と収益を同時に最大化します。",
                     tools=["Udemy", "Teachable", "ChatGPT", "Canva", "OBS Studio"],
-                    expected_outcome="月80万円の収益。100人以上のコミュニティリーダーへ。",
+                    expected_outcome="目標: 月80万円の収益。コミュニティリーダーを目指す。",
                     detailed_steps=[
                         "OBS Studioで画面録画環境を構築 → 「AI×副業 完全ロードマップ」全10回の講座を収録",
                         "Udemyで講座を公開（2,400円）→ セール時に大量集客 → 自己集客なら売上の97%が収益（Udemy集客は37%）",
@@ -619,13 +620,14 @@ class OracleEngine:
                     title="スマホ×共感力で心を動かすSNS発信、月3万円を達成",
                     description="あなたの共感力をSNSで発揮。AIで文章を磨き上げ、フォロワーの心に刺さるコンテンツでアフィリエイト収益を獲得します。",
                     tools=["ChatGPTアプリ", "Instagram", "Canvaアプリ", "A8.net"],
-                    expected_outcome="初月で2〜3万円の収益。共感の力がフォロワーを引き寄せる。",
+                    expected_outcome="目標: 初月で2〜3万円の収益。共感力でフォロワーを増やす。",
                     detailed_steps=[
                         "Instagramのビジネスアカウントを開設 → プロフィールに「AI×自分らしい生き方」を明記",
                         "ChatGPTアプリで「フォロワーの悩みに寄り添う投稿文」を毎日3パターン生成",
                         "Canvaアプリでカルーセル投稿（10枚スライド）のテンプレートを作成 → 毎日1投稿",
                         "A8.netでAIツール系（画像生成AI・ライティングAI等）のアフィリエイト案件に登録 → 投稿内で自然に紹介",
-                        "30日連続投稿でフォロワー500人 → ストーリーでアフィリエイトリンク → 月3万円達成"
+                        "30日連続投稿でフォロワー500人 → ストーリーでアフィリエイトリンク → 月3万円達成",
+                        "💡 慣れてきたらChatGPT Plus（月額約3,400円）やCanva Pro（月額1,180円）に課金すると効率UP"
                     ],
                     ai_prompt=self._prompt("Instagram共感マーケティングの専門家", "スマホだけでInstagramを使ったAI副業を始めたいです。共感力を活かしたSNS発信でアフィリエイト収益を得たいです。", ["AI×自分らしい生き方のジャンルで、30日分のInstagram投稿テーマと具体的な投稿文をそれぞれ書いて", "Canvaで作る10枚スライドのカルーセル投稿の構成テンプレート（1枚目〜10枚目の内容）", "フォロワー500人を最速で達成するためのハッシュタグ戦略と投稿時間帯"], mbti_str),
                 ),
@@ -634,7 +636,7 @@ class OracleEngine:
                     title="LINE×AI相談サービスで月15万円の信頼ビジネス",
                     description="SNSで集めたファンをLINE公式に誘導。AIサポート付きの相談サービスで深い信頼関係を構築し収益化します。",
                     tools=["LINE公式", "ChatGPTアプリ", "ココナラアプリ", "PayPay"],
-                    expected_outcome="月12〜15万円の安定収益。感謝されながら稼ぐ理想の形。",
+                    expected_outcome="目標: 月12〜15万円の収益。感謝されるサービスを構築。",
                     detailed_steps=[
                         "LINE公式アカウントを開設（無料プラン月200通・ライト月5,000円で5,000通）→ Instagramのプロフィールにリンク → 友だち登録特典「AI活用チェックリスト」を配布",
                         "ChatGPTで悩み別の回答テンプレートを20種類作成 → すぐに返信できる体制を構築",
@@ -649,7 +651,7 @@ class OracleEngine:
                     title="コミュニティ×デジタルコンテンツで月40万円",
                     description="ファンコミュニティを収益化。デジタルコンテンツ販売とメンバーシップで安定的な月40万円を実現します。",
                     tools=["note", "Brain", "LINE公式", "Canvaアプリ", "STORES"],
-                    expected_outcome="月40万円の収益。スマホ1台でコミュニティリーダーに。",
+                    expected_outcome="目標: 月40万円の収益。スマホ1台でコミュニティを運営。",
                     detailed_steps=[
                         "noteで有料記事「AI副業の始め方 完全ガイド」を執筆（1,480円・手数料約14.5%）→ SNSで告知",
                         "Brainで上位教材「AI×共感マーケティング実践編」を販売（9,800円・手数料12%+決済4%）→ アフィリエイト機能で拡散",
@@ -672,7 +674,7 @@ class OracleEngine:
                     title="AIで正確・高品質なビジネス文書サービス、月5万円を達成",
                     description="あなたの正確さと責任感を活かし、AIで品質管理された文書作成サービスを提供。「ミスゼロ」を武器に高単価案件を獲得します。",
                     tools=["ChatGPT（無料版）", "Googleドキュメント", "ココナラ", "Googleスプレッドシート"],
-                    expected_outcome="初月で5〜8万円の収益。正確さが評価され★5レビューが集まる。",
+                    expected_outcome="目標: 初月で5〜8万円の収益。正確さで高評価を狙う。",
                     detailed_steps=[
                         "ChatGPT（無料版）にアクセス → 「ビジネス文書の校正・品質チェック専門家として振る舞ってください」とプロンプトを入力",
                         "ココナラで出品：『AIで完璧なビジネス文書を作成します（議事録/報告書/企画書）』→ 価格12,000円 → 納期2日",
@@ -689,7 +691,7 @@ class OracleEngine:
                     title="AI×業務効率化コンサルで月25万円の堅実ビジネス",
                     description="Excelマクロ+AI自動化で中小企業の業務効率化を支援。あなたの計画性で確実に成果を出し、継続契約を獲得します。",
                     tools=["Excel VBA", "Python", "ChatGPT API", "Notion"],
-                    expected_outcome="月20〜25万円の安定収益。継続契約で収入が積み上がる。",
+                    expected_outcome="目標: 月20〜25万円の収益。継続契約で安定を目指す。",
                     detailed_steps=[
                         "ChatGPTに「Excel VBAコードを書いて」と依頼 → 日報自動集計/請求書自動生成のテンプレートを作成",
                         "ココナラで『Excel業務をAIで自動化します』を出品（20,000円〜）→ 見積もり対応",
@@ -704,7 +706,7 @@ class OracleEngine:
                     title="AI業務改善パッケージで月60万円の安定経営",
                     description="標準化されたAI業務改善パッケージを開発。堅実な営業と確実な成果で法人契約を拡大し、月60万円を達成します。",
                     tools=["Python", "Streamlit", "Manus AI", "Notion", "Zoom", "freee"],
-                    expected_outcome="月60万円の安定収益。法人クライアントとの長期契約で盤石な基盤。",
+                    expected_outcome="目標: 月60万円の収益。法人クライアントとの長期契約を目指す。",
                     detailed_steps=[
                         "業種別AI改善パッケージを3種類作成：飲食店/小売/士業 → それぞれの業務フローを分析",
                         "Streamlitでデモアプリを構築 → 「こんなに効率化できます」を可視化して営業ツールに",
@@ -723,13 +725,14 @@ class OracleEngine:
                     title="スマホ×AIで正確なデータ入力・整理サービス、月3万円を達成",
                     description="あなたの正確さと几帳面さを活かし、AIサポート付きのデータ整理・入力代行サービスをスマホだけで提供します。",
                     tools=["ChatGPTアプリ", "Googleスプレッドシート", "ココナラアプリ", "CamScanner"],
-                    expected_outcome="初月で3〜5万円の収益。正確さが最大の武器になる。",
+                    expected_outcome="目標: 初月で3〜5万円の収益。正確さを武器にする。",
                     detailed_steps=[
                         "ChatGPTアプリをインストール（無料版でOK）→ 「データ整理の専門家として正確に作業してください」とプロンプトを入力",
                         "Googleスプレッドシートアプリで作業用テンプレートを3種類作成（顧客リスト/在庫管理/経費管理）",
                         "ココナラで出品：『名刺・レシートのデータ化、正確に入力します』→ 価格5,000円（100件）→ 納期3日",
                         "CamScannerで画像をテキスト変換 → ChatGPTで整形 → スプレッドシートに入力 → 最終チェック",
-                        "週3件受注 × 月12件 × 3,900円（手数料引後）= 月46,800円達成"
+                        "週3件受注 × 月12件 × 3,900円（手数料引後）= 月46,800円達成",
+                        "💡 慣れてきたらChatGPT Plus（月額約3,400円）に課金すると精度・速度が大幅UP"
                     ],
                     ai_prompt=self._prompt("スマホ完結のデータ入力ビジネスの専門家", "スマホだけでAIを使ったデータ入力・整理サービスを始めたいです。正確さを武器にしたいです。", ["ココナラで「名刺・レシートのデータ化」サービスの出品テンプレート（タイトル/説明文/価格）", "CamScannerとChatGPTを組み合わせた効率的なデータ変換フローの手順", "Googleスプレッドシートの顧客リスト/在庫管理/経費管理テンプレートの設計"], mbti_str),
                 ),
@@ -738,7 +741,7 @@ class OracleEngine:
                     title="AI×事務代行で月15万円の信頼ビジネス",
                     description="オンライン事務代行として企業のバックオフィスをサポート。計画的な作業管理と正確さで継続契約を積み上げます。",
                     tools=["Googleワークスペース", "ChatGPTアプリ", "Notion", "Chatwork"],
-                    expected_outcome="月12〜15万円の安定収益。継続契約で毎月安定。",
+                    expected_outcome="目標: 月12〜15万円の収益。継続契約で安定を目指す。",
                     detailed_steps=[
                         "「オンライン事務代行」としてサービスを再設計 → メール対応/スケジュール管理/資料作成をパッケージ化（ココナラ手数料22%を考慮した価格設定）",
                         "Chatworkアプリをインストール → クライアントとの連絡ツールとして提案",
@@ -753,7 +756,7 @@ class OracleEngine:
                     title="事務代行チーム化で月35万円の安定経営",
                     description="信頼と実績を基に事務代行をチーム化。あなたが管理者となり、スマホ1台で複数クライアントを運営します。",
                     tools=["Notion", "Chatwork", "ココナラ", "freeeアプリ", "Zoom"],
-                    expected_outcome="月35万円の安定収益。管理者として効率的に運営。",
+                    expected_outcome="目標: 月35万円の収益。管理者として効率的に運営。",
                     detailed_steps=[
                         "ココナラで事務代行スタッフを2名募集 → マニュアル（Notion）で教育",
                         "品質管理チェックリストを作成 → 全納品物をあなたが最終チェック",
@@ -776,7 +779,7 @@ class OracleEngine:
                     title="AI×動画・デザインで即行動、月5万円を手に入れる",
                     description="あなたの行動力とセンスを活かし、AIで動画編集やデザイン制作を爆速化。トレンドを掴んで即収益化します。",
                     tools=["CapCut（無料版）", "Canva（無料版）", "ChatGPT（無料版）", "ココナラ"],
-                    expected_outcome="初月で5〜8万円の収益。作ったものがすぐにお金に変わる快感。",
+                    expected_outcome="目標: 初月で5〜8万円の収益。制作スキルを収益化。",
                     detailed_steps=[
                         "CapCutをダウンロード（無料版あり・Pro版は月額約1,350円で全機能解放）→ AI自動字幕/AI背景除去/AIエフェクト機能を全て試す",
                         "Canva（無料版）でSNS投稿用テンプレートを10種類作成",
@@ -793,7 +796,7 @@ class OracleEngine:
                     title="ショート動画量産×AI編集で月30万円のコンテンツファクトリー",
                     description="TikTok/YouTube Shortsのトレンドを分析し、AI編集で量産体制を構築。バズるコンテンツを科学的に生み出します。",
                     tools=["CapCut Pro", "Runway ML（Standardプラン月$12〜）", "TikTok", "YouTube Studio"],
-                    expected_outcome="月25〜30万円の収益。バズが収益を生む仕組みの完成。",
+                    expected_outcome="目標: 月25〜30万円の収益。バズから収益につなげる仕組みを構築。",
                     detailed_steps=[
                         "TikTokのトレンドハッシュタグを毎日チェック → ChatGPTで台本を5本/日生成",
                         "Runway ML（Gen-4.5でテキストから動画生成）→ CapCut Proで編集 → 1本あたり制作時間15分に短縮",
@@ -808,7 +811,7 @@ class OracleEngine:
                     title="マルチプラットフォーム展開で月80万円のクリエイター経済",
                     description="動画・デザインスキルを複数プラットフォームで展開。AI活用の制作ノウハウ自体を商品化し、収益源を多角化します。",
                     tools=["Adobe Premiere Pro", "Midjourney", "Teachable", "Instagram", "YouTube"],
-                    expected_outcome="月80万円の収益。クリエイターとして自由な働き方を実現。",
+                    expected_outcome="目標: 月80万円の収益。クリエイターとしての多角化を目指す。",
                     detailed_steps=[
                         "YouTubeチャンネル開設 → 「AI動画編集テクニック」を週2本投稿 → 3ヶ月で登録者5,000人",
                         "Midjourneyで生成したAIアート作品をSUZURI/REDBUBBLEでグッズ販売 → 不労所得化",
@@ -827,13 +830,14 @@ class OracleEngine:
                 title="スマホ1台でショート動画クリエイター、月3万円を達成",
                 description="あなたの行動力とセンスをスマホで全開に。CapCutアプリとAIで魅力的なショート動画を量産し、即収益化します。",
                 tools=["CapCutアプリ", "ChatGPTアプリ", "TikTok", "Instagram Reels"],
-                expected_outcome="初月で2〜3万円の収益。スマホ1台でクリエイターデビュー。",
+                expected_outcome="目標: 初月で2〜3万円の収益。スマホ1台でクリエイターデビュー。",
                 detailed_steps=[
                     "TikTokアカウントを開設 → ジャンル決定（AI活用術/ライフハック/面白動画から1つ選択）",
                     "ChatGPTアプリで「バズるTikTok台本を5本考えて。ジャンルは〇〇」→ 毎日の台本を自動生成",
                     "CapCutアプリ（無料版でも基本編集可・Pro版月額約1,350円で全機能）で撮影→AI自動字幕→BGM追加→エフェクト → 1本10分で完成",
                     "毎日2〜3本投稿を30日継続 → フォロワー1,000人 → TikTok Creator Fund申請",
-                    "同じ動画をInstagram Reelsにも投稿（クロスポスト）→ 収益源を2倍に"
+                    "同じ動画をInstagram Reelsにも投稿（クロスポスト）→ 収益源を2倍に",
+                    "💡 慣れてきたらCapCut Pro（月額約1,350円）に課金すると全機能解放で編集効率UP"
                 ],
                 ai_prompt=self._prompt("スマホ動画クリエイターの専門家", "スマホ1台でTikTokとInstagram Reelsのショート動画クリエイターを始めたいです。", ["今すぐバズるTikTokジャンルの選び方と、30日分の投稿テーマリスト", "ChatGPTで「スマホだけで作れるバズ動画の台本」を生成するプロンプト（5パターン）", "CapCutアプリのAI自動字幕・BGM追加を使った10分で1本完成する編集フロー"], mbti_str),
             ),
@@ -842,7 +846,7 @@ class OracleEngine:
                 title="動画編集受注×ライブ配信で月15万円のエンタメビジネス",
                 description="動画スキルを収益化しながら、ライブ配信で投げ銭収入も獲得。複数の収入源でリスク分散します。",
                 tools=["CapCutアプリ", "ココナラアプリ", "TikTok LIVE", "17LIVE"],
-                expected_outcome="月12〜15万円の収益。エンタメ力が武器になる。",
+                expected_outcome="目標: 月12〜15万円の収益。エンタメ力を活かす。",
                 detailed_steps=[
                     "ココナラで『スマホで撮った動画をプロ品質に編集します』→ 価格5,000円 → 納期1日",
                     "TikTokフォロワー3,000人達成 → LIVE配信を週3回開始 → 投げ銭収入を獲得",
@@ -857,7 +861,7 @@ class OracleEngine:
                 title="インフルエンサー×プロデュースで月40万円",
                 description="フォロワー1万人を達成し、企業案件とプロデュース業で大きく稼ぐ。あなたのエンタメ力で人を巻き込みます。",
                 tools=["TikTok", "Instagram", "LINE公式", "Brain", "STORES"],
-                expected_outcome="月40万円の収益。影響力がそのままお金になる世界。",
+                expected_outcome="目標: 月40万円の収益。影響力を収益につなげる。",
                 detailed_steps=[
                     "TikTokフォロワー1万人達成 → 企業PR案件の受注開始（1件3〜5万円）",
                     "「スマホ動画編集術」のBrain教材を販売（4,980円）→ アフィリエイト機能で拡散",
