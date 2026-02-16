@@ -611,6 +611,28 @@
 
     <script>
         const API_BASE = '';
+        const AFFILIATE_LINKS = {
+            'ココナラ': 'https://px.a8.net/svt/ejp?a8mat=4AXCKC+8WWNUA+2PEO+6AZAQ',
+            'ココナラアプリ': 'https://px.a8.net/svt/ejp?a8mat=4AXCKC+8WWNUA+2PEO+6AZAQ'
+        };
+        const AFFILIATE_PIXEL = '<img src="https://www16.a8.net/0.gif?a8mat=4AXCKC+8WWNUA+2PEO+6AZAQ" width="1" height="1" border="0" alt="" style="position:absolute;">';
+
+        function affiliateToolTag(tool) {
+            if (AFFILIATE_LINKS[tool]) {
+                return '<a href="' + AFFILIATE_LINKS[tool] + '" target="_blank" rel="nofollow noopener" class="tool-tag" style="text-decoration:none;cursor:pointer;background:#ff6b6b;color:white;">' + tool + ' →</a>';
+            }
+            return '<span class="tool-tag">' + tool + '</span>';
+        }
+
+        function affiliateText(text) {
+            let result = text;
+            for (const [name, url] of Object.entries(AFFILIATE_LINKS)) {
+                const regex = new RegExp('(' + name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?![^<]*<\\/a>)', 'g');
+                result = result.replace(regex, '<a href="' + url + '" target="_blank" rel="nofollow noopener" style="color:#667eea;font-weight:600;text-decoration:underline;">$1</a>');
+            }
+            return result;
+        }
+
         let selectedMBTI = null;
         let selectedDevice = null;
         let questions = [];
@@ -828,7 +850,7 @@
                                             <div class="roadmap-title">${step.title || ''}</div>
                                             <p style="margin: 10px 0;">${step.description || ''}</p>
                                             <div class="roadmap-tools">
-                                                ${(step.tools || []).map(tool => `<span class="tool-tag">${tool}</span>`).join('')}
+                                                ${(step.tools || []).map(tool => affiliateToolTag(tool)).join('')}
                                             </div>
                                         </div>
                                         <div style="text-align: right;">
@@ -849,7 +871,7 @@
                                                                     ${stepIndex + 1}
                                                                 </div>
                                                                 <div style="color: #1e3c72; line-height: 1.7; flex: 1;">
-                                                                    ${stepText}
+                                                                    ${affiliateText(stepText)}
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -934,9 +956,10 @@
                     <div style="margin-top: 30px; text-align: center; padding-top: 20px; border-top: 1px solid #e5e7eb;">
                         <a href="/privacy" style="color: #999; font-size: 0.85em; text-decoration: none;">プライバシーポリシー</a>
                     </div>
+                    ${AFFILIATE_PIXEL}
                 </div>
             `;
-            
+
             resultDiv.innerHTML = html;
         }
 
