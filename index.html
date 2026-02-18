@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oracle Engine | MBTI × AI副業診断</title>
-    <meta name="description" content="あなたのMBTIタイプに合った最適なAI副業ロードマップを無料で診断。性格×デバイス環境に合わせた具体的な稼ぎ方を提案します。">
+    <title>Oracle Engine | 個の資質を資本へ変える知能設計</title>
+    <meta name="description" content="MBTIに基づく個の資質分析。AIアルゴリズムがポテンシャルを資本化する戦略設計図を生成。">
 
     <!-- OGP -->
-    <meta property="og:title" content="Oracle Engine | MBTI × AI副業診断">
-    <meta property="og:description" content="あなたのMBTIに最適なAI副業ロードマップを無料診断。3ヶ月で収益化する具体的なステップを提案します。">
+    <meta property="og:title" content="Oracle Engine | 個の資質を資本へ変える知能設計">
+    <meta property="og:description" content="MBTIに基づく個の資質分析。AIアルゴリズムがポテンシャルを資本化する戦略設計図を生成。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://oracle-engine-uaes.onrender.com/">
     <meta property="og:image" content="https://oracle-engine-uaes.onrender.com/og-image.png">
@@ -16,11 +16,11 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Oracle Engine | MBTI × AI副業診断">
-    <meta name="twitter:description" content="あなたのMBTIに最適なAI副業ロードマップを無料診断">
+    <meta name="twitter:title" content="Oracle Engine | 個の資質を資本へ変える知能設計">
+    <meta name="twitter:description" content="MBTIに基づく個の資質分析。AIアルゴリズムがポテンシャルを資本化する戦略設計図を生成。">
     <meta name="twitter:image" content="https://oracle-engine-uaes.onrender.com/og-image.png">
 
-    <!-- Google Analytics (GA4) - TODO: Replace G-4WKK0VQ6E3 with your measurement ID -->
+    <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WKK0VQ6E3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -29,7 +29,19 @@
         gtag('config', 'G-4WKK0VQ6E3');
     </script>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Noto+Serif+JP:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --silver: #CFCFCF;
+            --silver-light: #E0E0E0;
+            --bronze: #B8A080;
+            --bronze-dim: rgba(184,160,128,0.4);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -37,51 +49,75 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            background: #050505;
+            background-image:
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
+                radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 40%, #050505 100%);
             min-height: 100vh;
             padding: 20px;
+            color: var(--silver);
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
             overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
         }
 
         .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 40px;
+            background: #0a0a0a;
+            color: var(--silver-light);
+            padding: 60px 40px;
             text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
         .header h1 {
+            font-family: 'Noto Serif JP', serif;
             font-size: 2.5em;
             margin-bottom: 10px;
-            font-weight: 800;
+            font-weight: 300;
+            letter-spacing: 0.25em;
+            color: var(--silver-light);
         }
 
         .header .subtitle {
             font-size: 1.2em;
-            opacity: 0.9;
+            color: rgba(207,207,207,0.7);
+            letter-spacing: 0.1em;
         }
 
         .header .mission {
             margin-top: 15px;
-            font-size: 0.95em;
-            opacity: 0.8;
+            font-size: 0.85em;
+            color: var(--bronze);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 120px 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .hero .tagline {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2.8em;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            color: var(--silver-light);
         }
 
         .content {
-            padding: 40px;
+            padding: 60px 50px;
         }
 
         .step {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             opacity: 0;
             animation: fadeIn 0.6s forwards;
         }
@@ -97,10 +133,12 @@
         }
 
         .step-title {
+            font-family: 'Noto Serif JP', serif;
             font-size: 1.5em;
-            font-weight: 700;
+            font-weight: 400;
             margin-bottom: 20px;
-            color: #1e3c72;
+            color: var(--silver-light);
+            letter-spacing: 0.2em;
         }
 
         .mbti-grid {
@@ -112,25 +150,29 @@
 
         .mbti-btn {
             padding: 15px;
-            border: 2px solid #ddd;
-            background: white;
-            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02);
+            border-radius: 0;
             cursor: pointer;
             font-size: 1.1em;
             font-weight: 600;
             transition: all 0.3s;
+            color: var(--silver);
+            backdrop-filter: blur(10px);
         }
 
         .mbti-btn:hover {
-            border-color: #667eea;
-            background: #f0f4ff;
+            border-color: rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 15px rgba(255,255,255,0.04);
             transform: translateY(-2px);
         }
 
         .mbti-btn.selected {
-            background: #667eea;
-            color: white;
-            border-color: #667eea;
+            background: rgba(184,160,128,0.08);
+            color: var(--silver-light);
+            border-color: rgba(184,160,128,0.5);
+            box-shadow: inset 0 0 20px rgba(184,160,128,0.08), 0 0 15px rgba(184,160,128,0.06);
         }
 
         .device-options {
@@ -141,41 +183,49 @@
 
         .device-card {
             padding: 20px;
-            border: 3px solid #ddd;
-            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 0;
             cursor: pointer;
             text-align: center;
             transition: all 0.3s;
+            color: var(--silver);
+            background: rgba(255,255,255,0.02);
+            backdrop-filter: blur(10px);
         }
 
         .device-card:hover {
-            border-color: #667eea;
-            background: #f0f4ff;
+            border-color: rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 15px rgba(255,255,255,0.04);
         }
 
         .device-card.selected {
-            background: #667eea;
-            color: white;
-            border-color: #667eea;
+            background: rgba(184,160,128,0.08);
+            color: var(--silver-light);
+            border-color: rgba(184,160,128,0.5);
+            box-shadow: inset 0 0 20px rgba(184,160,128,0.08), 0 0 15px rgba(184,160,128,0.06);
         }
 
         .device-icon {
-            font-size: 3em;
+            font-size: 1.5em;
             margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
         }
 
         .question {
-            margin-bottom: 30px;
-            padding: 25px;
-            background: #f9fafb;
-            border-radius: 10px;
+            margin-bottom: 40px;
+            padding: 35px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 0;
+            border: 1px solid rgba(255,255,255,0.06);
         }
 
         .question-text {
             font-size: 1.15em;
             font-weight: 600;
             margin-bottom: 20px;
-            color: #1e3c72;
+            color: var(--silver-light);
             line-height: 1.6;
         }
 
@@ -184,7 +234,7 @@
             justify-content: space-between;
             margin-bottom: 15px;
             font-size: 0.9em;
-            color: #666;
+            color: rgba(207,207,207,0.5);
             font-weight: 500;
         }
 
@@ -198,8 +248,8 @@
         .scale-btn {
             width: 60px;
             height: 60px;
-            border: 3px solid #ddd;
-            background: white;
+            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02);
             border-radius: 50%;
             cursor: pointer;
             font-weight: 700;
@@ -208,45 +258,48 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
+            color: rgba(207,207,207,0.5);
         }
 
         .scale-btn:hover {
-            border-color: #667eea;
-            background: #f0f4ff;
+            border-color: rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.05);
             transform: scale(1.1);
         }
 
         .scale-btn.selected {
-            background: #667eea;
-            color: white;
-            border-color: #667eea;
+            background: rgba(184,160,128,0.1);
+            color: var(--silver-light);
+            border-color: var(--bronze);
             transform: scale(1.15);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 0 15px rgba(184,160,128,0.15), 0 0 30px rgba(184,160,128,0.05);
         }
 
         .btn {
             padding: 15px 40px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 10px;
+            background: transparent;
+            color: var(--silver-light);
+            border: 1px solid var(--bronze-dim);
+            border-radius: 0;
             font-size: 1.1em;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
             width: 100%;
             margin-top: 20px;
+            letter-spacing: 0.1em;
         }
 
         .btn:hover:not(:disabled) {
-            background: #5568d3;
+            border-color: var(--bronze);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 0 20px rgba(184,160,128,0.1);
         }
 
         .btn:disabled {
-            background: #ccc;
+            background: transparent;
+            border-color: rgba(255,255,255,0.08);
+            color: rgba(207,207,207,0.2);
             cursor: not-allowed;
             transform: none;
         }
@@ -257,8 +310,8 @@
         }
 
         .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #667eea;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-top: 1px solid var(--bronze);
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -289,32 +342,37 @@
         .archetype-badge {
             display: inline-block;
             padding: 10px 20px;
-            background: #667eea;
-            color: white;
-            border-radius: 20px;
+            background: transparent;
+            color: var(--silver-light);
+            border-radius: 0;
             font-size: 1.5em;
-            font-weight: 700;
+            font-weight: 900;
             margin-bottom: 20px;
+            letter-spacing: 0.1em;
+            border: 1px solid rgba(184,160,128,0.5);
+            box-shadow: 0 0 15px rgba(184,160,128,0.08);
         }
 
         .section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f9fafb;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 0;
+            border-left: 2px solid var(--bronze-dim);
         }
 
         .section-title {
+            font-family: 'Noto Serif JP', serif;
             font-size: 1.3em;
-            font-weight: 700;
+            font-weight: 400;
             margin-bottom: 15px;
-            color: #1e3c72;
+            color: var(--silver-light);
+            letter-spacing: 0.15em;
         }
 
         .list-item {
             padding: 10px 0;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
         .list-item:last-child {
@@ -322,38 +380,37 @@
         }
 
         .roadmap-step {
-            margin-bottom: 20px;
-            background: white;
-            border-radius: 10px;
+            margin-bottom: 35px;
+            background: transparent;
+            border-radius: 0;
             overflow: hidden;
-            border: 2px solid #e5e7eb;
+            border: 1px solid rgba(255,255,255,0.06);
             transition: all 0.3s;
         }
 
         .roadmap-step:hover {
-            border-color: #667eea;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+            border-color: rgba(184,160,128,0.3);
         }
 
         .roadmap-header {
-            padding: 20px;
+            padding: 30px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: start;
-            border-left: 5px solid #667eea;
-            background: #fafafa;
+            border-left: 3px solid var(--bronze-dim);
+            background: rgba(255,255,255,0.03);
             transition: background 0.3s;
         }
 
         .roadmap-header:hover {
-            background: #f0f4ff;
+            background: rgba(255,255,255,0.05);
         }
 
         .accordion-icon {
             font-size: 1.2em;
             transition: transform 0.3s;
-            color: #667eea;
+            color: rgba(207,207,207,0.5);
             font-weight: bold;
             margin-left: 15px;
         }
@@ -364,15 +421,15 @@
 
         .tap-hint {
             font-size: 0.8em;
-            color: #667eea;
+            color: rgba(207,207,207,0.5);
             font-weight: 600;
             animation: pulse 2s ease-in-out infinite;
             margin-top: 8px;
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
         }
 
         .accordion-content {
@@ -382,14 +439,15 @@
 
         .roadmap-phase {
             font-weight: 700;
-            color: #667eea;
+            color: rgba(207,207,207,0.6);
             margin-bottom: 5px;
+            letter-spacing: 0.05em;
         }
 
         .roadmap-title {
             font-size: 1.2em;
             font-weight: 700;
-            color: #1e3c72;
+            color: var(--silver-light);
             margin-bottom: 10px;
         }
 
@@ -402,19 +460,20 @@
 
         .tool-tag {
             padding: 5px 12px;
-            background: #e0e7ff;
-            color: #667eea;
-            border-radius: 15px;
+            background: rgba(255,255,255,0.05);
+            color: var(--silver);
+            border-radius: 0;
             font-size: 0.85em;
             font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .error-message {
-            background: #fee;
-            border: 2px solid #fcc;
-            color: #c33;
+            background: rgba(200,0,0,0.1);
+            border: 1px solid rgba(200,0,0,0.3);
+            color: #ff6666;
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 0;
             margin: 20px 0;
         }
 
@@ -425,11 +484,11 @@
             }
 
             .container {
-                border-radius: 12px;
+                border-radius: 0;
             }
 
             .header {
-                padding: 20px 15px;
+                padding: 30px 15px;
             }
 
             .header h1 {
@@ -444,8 +503,20 @@
                 font-size: 0.8em;
             }
 
+            .hero {
+                padding: 70px 20px;
+            }
+
+            .hero .tagline {
+                font-size: 1.8em;
+            }
+
             .content {
-                padding: 16px;
+                padding: 30px 20px;
+            }
+
+            .step {
+                margin-bottom: 40px;
             }
 
             .step-title {
@@ -473,13 +544,13 @@
             }
 
             .device-icon {
-                font-size: 2em;
+                font-size: 1.2em;
                 margin-bottom: 5px;
             }
 
             .question {
-                padding: 14px;
-                margin-bottom: 16px;
+                padding: 20px;
+                margin-bottom: 25px;
             }
 
             .question-text {
@@ -499,7 +570,7 @@
                 width: 44px;
                 height: 44px;
                 font-size: 1.05em;
-                border-width: 2px;
+                border-width: 1px;
             }
 
             .btn {
@@ -513,8 +584,8 @@
             }
 
             .section {
-                padding: 14px;
-                margin-bottom: 16px;
+                padding: 20px;
+                margin-bottom: 30px;
             }
 
             .section-title {
@@ -522,8 +593,12 @@
                 margin-bottom: 10px;
             }
 
+            .roadmap-step {
+                margin-bottom: 25px;
+            }
+
             .roadmap-header {
-                padding: 14px;
+                padding: 20px;
             }
 
             .roadmap-title {
@@ -535,15 +610,19 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🔮 Oracle Engine</h1>
-            <div class="subtitle">MBTI診断 × AI副業ロードマップ</div>
-            <div class="mission">Created by 高嶺泰志</div>
+            <h1>Oracle Engine</h1>
+            <div class="subtitle">個の資質を資本へ変える知能設計</div>
+            <div class="mission">Powered by SUMI X</div>
+        </div>
+
+        <div class="hero">
+            <div class="tagline">資質を、資本へ。</div>
         </div>
 
         <div class="content">
             <!-- Step 1: MBTI Selection -->
             <div id="step1" class="step">
-                <div class="step-title">📋 STEP 1: あなたのMBTIタイプを選択してください</div>
+                <div class="step-title">STEP 1: 資質タイプを選択</div>
                 <div class="mbti-grid">
                     <button class="mbti-btn" data-mbti="INTJ">INTJ</button>
                     <button class="mbti-btn" data-mbti="INTP">INTP</button>
@@ -567,22 +646,22 @@
 
             <!-- Step 2: Device Selection -->
             <div id="step2" class="step hidden">
-                <div class="step-title">💻 STEP 2: 使用デバイスを選択してください</div>
+                <div class="step-title">STEP 2: 実行環境を選択</div>
                 <div class="device-options">
                     <div class="device-card" data-device="PC_MAC">
-                        <div class="device-icon">🍎</div>
+                        <div class="device-icon">Mac</div>
                         <div><strong>Mac</strong></div>
-                        <div style="font-size: 0.9em; color: #666;">MacBook / iMac</div>
+                        <div style="font-size: 0.9em; color: rgba(207,207,207,0.5);">MacBook / iMac</div>
                     </div>
                     <div class="device-card" data-device="PC_WINDOWS">
-                        <div class="device-icon">🪟</div>
+                        <div class="device-icon">Win</div>
                         <div><strong>Windows PC</strong></div>
-                        <div style="font-size: 0.9em; color: #666;">Windows 10/11</div>
+                        <div style="font-size: 0.9em; color: rgba(207,207,207,0.5);">Windows 10/11</div>
                     </div>
                     <div class="device-card" data-device="MOBILE_ONLY">
-                        <div class="device-icon">📱</div>
-                        <div><strong>スマホのみ</strong></div>
-                        <div style="font-size: 0.9em; color: #666;">iPhone / Android</div>
+                        <div class="device-icon">Mobile</div>
+                        <div><strong>Mobile</strong></div>
+                        <div style="font-size: 0.9em; color: rgba(207,207,207,0.5);">iPhone / Android</div>
                     </div>
                 </div>
                 <button id="next2" class="btn" disabled>次へ</button>
@@ -590,17 +669,17 @@
 
             <!-- Step 3: Psychometric Questions -->
             <div id="step3" class="step hidden">
-                <div class="step-title">🧠 STEP 3: ビジネス特性診断（5問）</div>
+                <div class="step-title">STEP 3: ポテンシャル分析（5問）</div>
                 <div id="questions-container"></div>
-                <button id="diagnose" class="btn" disabled>診断結果を見る</button>
+                <button id="diagnose" class="btn" disabled>分析結果を表示</button>
             </div>
 
             <!-- Loading -->
             <div id="loading" class="step hidden">
                 <div class="loading">
                     <div class="spinner"></div>
-                    <div style="font-size: 1.2em; font-weight: 600;">最新のAI副業トレンドを検索中...</div>
-                    <div style="margin-top: 10px; color: #666;">あなた専用のロードマップを生成しています</div>
+                    <div style="font-size: 1.2em; font-weight: 700; color: #E0E0E0; letter-spacing: 0.1em;">アルゴリズムが個の資質を解析中...</div>
+                    <div style="margin-top: 10px; color: rgba(207,207,207,0.5);">あなた専用の戦略設計図を生成しています</div>
                 </div>
             </div>
 
@@ -621,7 +700,7 @@
 
         function affiliateToolTag(tool) {
             if (AFFILIATE_LINKS[tool]) {
-                return '<a href="' + AFFILIATE_LINKS[tool] + '" target="_blank" rel="nofollow noopener" class="tool-tag" style="text-decoration:none;cursor:pointer;background:#ff6b6b;color:white;">' + tool + ' →</a>';
+                return '<a href="' + AFFILIATE_LINKS[tool] + '" target="_blank" rel="nofollow noopener" class="tool-tag" style="text-decoration:none;cursor:pointer;background:rgba(184,160,128,0.1);color:#E0E0E0;border:1px solid rgba(184,160,128,0.4);">' + tool + ' &rarr;</a>';
             }
             return '<span class="tool-tag">' + tool + '</span>';
         }
@@ -630,7 +709,7 @@
             let result = text;
             for (const [name, url] of Object.entries(AFFILIATE_LINKS)) {
                 const regex = new RegExp('(' + name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?![^<]*<\\/a>)', 'g');
-                result = result.replace(regex, '<a href="' + url + '" target="_blank" rel="nofollow noopener" style="color:#667eea;font-weight:600;text-decoration:underline;">$1</a>');
+                result = result.replace(regex, '<a href="' + url + '" target="_blank" rel="nofollow noopener" style="color:#E0E0E0;font-weight:600;text-decoration:underline;">$1</a>');
             }
             return result;
         }
@@ -668,7 +747,7 @@
         document.getElementById('next2').addEventListener('click', async () => {
             document.getElementById('step2').classList.add('hidden');
             document.getElementById('step3').classList.remove('hidden');
-            
+
             // Fetch questions
             try {
                 const response = await fetch(`${API_BASE}/questions/${selectedMBTI}`);
@@ -677,11 +756,11 @@
                 }
                 const data = await response.json();
                 questions = data.questions || [];
-                
+
                 if (questions.length === 0) {
                     throw new Error('質問データが取得できませんでした');
                 }
-                
+
                 renderQuestions();
             } catch (error) {
                 console.error('Error fetching questions:', error);
@@ -698,16 +777,15 @@
         function renderQuestions() {
             const container = document.getElementById('questions-container');
             container.innerHTML = '';
-            
+
             questions.forEach((q, index) => {
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
-                
-                // q.text を使用（バックエンドから送られるキー）
+
                 const questionText = q.text || q.question || '質問が読み込めませんでした';
                 const scaleLow = q.scale_low || '当てはまらない';
                 const scaleHigh = q.scale_high || '当てはまる';
-                
+
                 questionDiv.innerHTML = `
                     <div class="question-text">Q${index + 1}: ${questionText}</div>
                     <div class="scale-labels">
@@ -731,12 +809,12 @@
                     const scale = btn.parentElement;
                     const questionIndex = parseInt(scale.dataset.question);
                     const score = parseInt(btn.dataset.score);
-                    
+
                     scale.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('selected'));
                     btn.classList.add('selected');
-                    
+
                     responses[questionIndex] = { question_id: questionIndex + 1, score: score };
-                    
+
                     // Check if all answered
                     const answeredCount = responses.filter(r => r).length;
                     if (answeredCount === questions.length) {
@@ -749,10 +827,10 @@
         document.getElementById('diagnose').addEventListener('click', async () => {
             document.getElementById('step3').classList.add('hidden');
             document.getElementById('loading').classList.remove('hidden');
-            
+
             try {
                 const validResponses = responses.filter(r => r);
-                
+
                 const response = await fetch(`${API_BASE}/diagnose`, {
                     method: 'POST',
                     headers: {
@@ -764,17 +842,17 @@
                         psychometric_responses: validResponses
                     })
                 });
-                
+
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                
+
                 const result = await response.json();
                 displayResult(result);
-                
+
                 document.getElementById('loading').classList.add('hidden');
                 document.getElementById('result').classList.remove('hidden');
-                
+
                 // Scroll to result
                 document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
             } catch (error) {
@@ -793,109 +871,109 @@
 
         function displayResult(data) {
             const resultDiv = document.getElementById('result');
-            
+
             const roadmap = data.strategic_roadmap || [];
             const strengths = data.strengths || [];
             const weaknesses = data.weaknesses || [];
             const trends = data.latest_trends || [];
-            
+
             let html = `
                 <div class="result">
-                    <div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-bottom: 25px;">
-                        <div style="font-size: 0.9em; opacity: 0.8; margin-bottom: 8px;">Oracle Engine 診断結果</div>
-                        <div style="font-size: 2em; font-weight: 800; margin-bottom: 8px;">🎯 ${data.archetype || '不明'}</div>
-                        <div style="font-size: 1em; opacity: 0.9;">${selectedMBTI} タイプ</div>
+                    <div style="background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); color: #E0E0E0; padding: 30px; border: 1px solid rgba(184,160,128,0.25); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 4px 15px rgba(0,0,0,0.5); text-align: center; margin-bottom: 25px;">
+                        <div style="font-size: 0.9em; color: #B8A080; margin-bottom: 8px; letter-spacing: 0.15em;">Oracle Engine 戦略書 / Strategy Paper</div>
+                        <div style="font-size: 2em; font-weight: 900; margin-bottom: 8px; letter-spacing: 0.1em; color: #E0E0E0;">${data.archetype || '不明'}</div>
+                        <div style="font-size: 1em; color: rgba(207,207,207,0.6);">${selectedMBTI} タイプ</div>
                     </div>
-                    <p style="font-size: 1.1em; margin-bottom: 20px;">${data.archetype_description || ''}</p>
-                    
+                    <p style="font-size: 1.1em; margin-bottom: 20px; color: rgba(207,207,207,0.85);">${data.archetype_description || ''}</p>
+
                     ${data.psychometric_insight ? `
                         <div class="section">
-                            <div class="section-title">🧠 あなたの診断結果</div>
+                            <div class="section-title">ポテンシャル分析結果</div>
                             <p>${data.psychometric_insight}</p>
                         </div>
                     ` : ''}
-                    
+
                     ${strengths.length > 0 ? `
                         <div class="section">
-                            <div class="section-title">✅ ビジネス上の強み</div>
-                            ${strengths.map(s => `<div class="list-item">• ${s}</div>`).join('')}
+                            <div class="section-title">固有の強み</div>
+                            ${strengths.map(s => `<div class="list-item">${s}</div>`).join('')}
                         </div>
                     ` : ''}
-                    
+
                     ${weaknesses.length > 0 ? `
                         <div class="section">
-                            <div class="section-title">⚠️ ビジネス上の弱み</div>
-                            ${weaknesses.map(w => `<div class="list-item">• ${w}</div>`).join('')}
+                            <div class="section-title">構造的弱点</div>
+                            ${weaknesses.map(w => `<div class="list-item">${w}</div>`).join('')}
                         </div>
                     ` : ''}
-                    
+
                     ${trends.length > 0 ? `
                         <div class="section">
-                            <div class="section-title">📰 最新トレンド（2026年2月）</div>
+                            <div class="section-title">市場インテリジェンス</div>
                             ${trends.map(t => `
-                                <div style="margin-bottom: 15px; padding: 15px; background: white; border-radius: 8px;">
-                                    <div style="font-weight: 600; color: #1e3c72; margin-bottom: 5px;">${t.title || ''}</div>
-                                    <div style="font-size: 0.9em; color: #666;">${t.snippet || ''}</div>
+                                <div style="margin-bottom: 15px; padding: 15px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+                                    <div style="font-weight: 600; color: #E0E0E0; margin-bottom: 5px;">${t.title || ''}</div>
+                                    <div style="font-size: 0.9em; color: rgba(207,207,207,0.5);">${t.snippet || ''}</div>
                                 </div>
                             `).join('')}
                         </div>
                     ` : ''}
-                    
+
                     ${roadmap.length > 0 ? `
                         <div class="section">
-                            <div class="section-title">🗺️ あなた専用3ヶ月ロードマップ</div>
+                            <div class="section-title">ポテンシャル資本化の設計図 / Blueprint</div>
                             ${roadmap.map((step, index) => `
                                 <div class="roadmap-step">
                                     <div class="roadmap-header" onclick="toggleAccordion(${index})">
                                         <div style="flex: 1;">
                                             <div class="roadmap-phase">${step.phase || ''}</div>
                                             <div class="roadmap-title">${step.title || ''}</div>
-                                            <p style="margin: 10px 0;">${step.description || ''}</p>
+                                            <p style="margin: 10px 0; color: rgba(207,207,207,0.6);">${step.description || ''}</p>
                                             <div class="roadmap-tools">
                                                 ${(step.tools || []).map(tool => affiliateToolTag(tool)).join('')}
                                             </div>
                                         </div>
                                         <div style="text-align: right;">
-                                            <div class="accordion-icon ${index === 0 ? 'rotated' : ''}" id="icon-${index}">▼</div>
-                                            ${index !== 0 ? '<div class="tap-hint">▲ タップで詳細を見る</div>' : ''}
+                                            <div class="accordion-icon ${index === 0 ? 'rotated' : ''}" id="icon-${index}">&#9660;</div>
+                                            ${index !== 0 ? '<div class="tap-hint">&#9650; タップで詳細</div>' : ''}
                                         </div>
                                     </div>
 
-                                    <div class="accordion-content" id="content-${index}" style="${index === 0 ? 'display: block;' : ''}"
-                                        <div style="background: #f0f4ff; padding: 20px; margin: 15px 20px 20px 20px; border-radius: 10px;">
-                                            <h4 style="color: #667eea; margin-bottom: 15px; font-size: 1.1em;">📋 超具体的な作業手順</h4>
+                                    <div class="accordion-content" id="content-${index}" style="${index === 0 ? 'display: block;' : ''}">
+                                        <div style="background: rgba(255,255,255,0.03); padding: 20px; margin: 15px 20px 20px 20px; border: 1px solid rgba(255,255,255,0.06);">
+                                            <h4 style="color: rgba(207,207,207,0.6); margin-bottom: 15px; font-size: 1.1em; letter-spacing: 0.1em;">実行プロトコル</h4>
                                             ${step.detailed_steps && step.detailed_steps.length > 0 ? `
                                                 <ul style="list-style: none; padding: 0; margin: 0;">
                                                     ${step.detailed_steps.map((stepText, stepIndex) => `
-                                                        <li style="margin-bottom: 15px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+                                                        <li style="margin-bottom: 15px; padding: 15px; background: rgba(255,255,255,0.03); border-left: 2px solid rgba(184,160,128,0.25);">
                                                             <div style="display: flex; align-items: start; gap: 10px;">
-                                                                <div style="background: #667eea; color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.85em; font-weight: 700; flex-shrink: 0;">
+                                                                <div style="background: transparent; color: #B8A080; padding: 4px 12px; font-size: 0.85em; font-weight: 700; flex-shrink: 0; border: 1px solid rgba(184,160,128,0.4);">
                                                                     ${stepIndex + 1}
                                                                 </div>
-                                                                <div style="color: #1e3c72; line-height: 1.7; flex: 1;">
+                                                                <div style="color: rgba(207,207,207,0.85); line-height: 1.7; flex: 1;">
                                                                     ${affiliateText(stepText)}
                                                                 </div>
                                                             </div>
                                                         </li>
                                                     `).join('')}
                                                 </ul>
-                                            ` : '<p style="color: #666;">詳細手順を準備中です</p>'}
-                                            <p style="margin-top: 15px; font-weight: 600; padding: 15px; background: #d1fae5; border-radius: 8px; color: #065f46;">
-                                                ✅ 完了すると: ${step.expected_outcome || ''}
+                                            ` : '<p style="color: rgba(207,207,207,0.5);">詳細手順を準備中です</p>'}
+                                            <p style="margin-top: 15px; font-weight: 600; padding: 15px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); color: rgba(207,207,207,0.85);">
+                                                達成指標: ${step.expected_outcome || ''}
                                             </p>
 
                                             ${step.ai_prompt ? `
-                                                <div style="margin-top: 20px; background: white; border: 2px solid #667eea; border-radius: 10px; overflow: hidden;">
-                                                    <div style="background: #667eea; color: white; padding: 12px 15px; font-weight: 700; font-size: 1em;">
-                                                        🤖 このステップをAIに相談しよう！
+                                                <div style="margin-top: 20px; background: transparent; border: 1px solid rgba(184,160,128,0.25); overflow: hidden;">
+                                                    <div style="background: rgba(184,160,128,0.08); color: #E0E0E0; padding: 12px 15px; font-weight: 700; font-size: 1em; letter-spacing: 0.05em;">
+                                                        AIアシスタントへの指示
                                                     </div>
                                                     <div style="padding: 15px;">
-                                                        <p style="font-size: 0.9em; color: #666; margin-bottom: 10px;">📸 上のロードマップをスクショして、以下のプロンプトと一緒にChatGPTやGeminiに送ると、さらに具体的なアドバイスがもらえます：</p>
-                                                        <pre id="prompt-text-${index}" style="background: #f8f9fa; padding: 15px; border-radius: 8px; font-size: 0.85em; line-height: 1.6; white-space: pre-wrap; word-wrap: break-word; color: #1e3c72; border: 1px solid #e5e7eb; max-height: 200px; overflow-y: auto;">${step.ai_prompt}</pre>
-                                                        <button onclick="copyPrompt(${index})" style="margin-top: 10px; padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95em; transition: all 0.3s;" onmouseover="this.style.background='#5568d3'" onmouseout="this.style.background='#667eea'">
-                                                            📋 プロンプトをコピー
+                                                        <p style="font-size: 0.9em; color: rgba(207,207,207,0.5); margin-bottom: 10px;">上のロードマップをスクショして、以下のプロンプトと一緒にChatGPTやGeminiに送ると、さらに具体的なアドバイスが得られます：</p>
+                                                        <pre id="prompt-text-${index}" style="background: rgba(255,255,255,0.03); padding: 15px; font-size: 0.85em; line-height: 1.6; white-space: pre-wrap; word-wrap: break-word; color: rgba(207,207,207,0.85); border: 1px solid rgba(255,255,255,0.06); max-height: 200px; overflow-y: auto;">${step.ai_prompt}</pre>
+                                                        <button onclick="copyPrompt(${index})" style="margin-top: 10px; padding: 10px 20px; background: transparent; color: #E0E0E0; border: 1px solid rgba(184,160,128,0.4); font-weight: 700; cursor: pointer; font-size: 0.95em; transition: all 0.3s; letter-spacing: 0.05em;" onmouseover="this.style.borderColor='#B8A080';this.style.boxShadow='0 0 15px rgba(184,160,128,0.1)'" onmouseout="this.style.borderColor='rgba(184,160,128,0.4)';this.style.boxShadow='none'">
+                                                            プロンプトをコピー
                                                         </button>
-                                                        <span id="copy-feedback-${index}" style="margin-left: 10px; color: #10b981; font-weight: 600; opacity: 0; transition: opacity 0.3s;"></span>
+                                                        <span id="copy-feedback-${index}" style="margin-left: 10px; color: rgba(207,207,207,0.7); font-weight: 600; opacity: 0; transition: opacity 0.3s;"></span>
                                                     </div>
                                                 </div>
                                             ` : ''}
@@ -905,58 +983,60 @@
                             `).join('')}
                         </div>
                     ` : ''}
-                    
+
                     ${data.automation_teaser ? `
-                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 15px; margin-top: 30px;">
-                            <div style="font-size: 1.8em; font-weight: 800; margin-bottom: 15px;">🛠️ ${data.automation_teaser.tool_name || ''}</div>
-                            <div style="background: rgba(255,255,255,0.3); height: 30px; border-radius: 15px; overflow: hidden; margin: 15px 0;">
-                                <div style="background: #10b981; height: 100%; width: ${data.automation_teaser.progress_percentage || 0}%; display: flex; align-items: center; justify-content: center; font-weight: 700; transition: width 1s;">
-                                    ${data.automation_teaser.progress_percentage || 0}% 完成
+                        <div style="background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); color: #E0E0E0; padding: 30px; border: 1px solid rgba(184,160,128,0.25); margin-top: 30px;">
+                            <div style="font-size: 1.8em; font-weight: 900; margin-bottom: 15px; letter-spacing: 0.1em; color: #E0E0E0;">${data.automation_teaser.tool_name || ''}</div>
+                            <div style="background: rgba(255,255,255,0.06); height: 30px; overflow: hidden; margin: 15px 0;">
+                                <div style="background: linear-gradient(90deg, #B8A080, #CFCFCF); height: 100%; width: ${data.automation_teaser.progress_percentage || 0}%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #0a0a0a; transition: width 1s;">
+                                    ${data.automation_teaser.progress_percentage || 0}%
                                 </div>
                             </div>
-                            <p style="font-size: 1.1em; margin-bottom: 15px;">⏱️ ${data.automation_teaser.time_saved || ''}</p>
+                            <p style="font-size: 1.1em; margin-bottom: 15px; color: rgba(207,207,207,0.85);">${data.automation_teaser.time_saved || ''}</p>
                             <div style="margin-top: 15px;">
                                 ${(data.automation_teaser.key_features || []).map(f => `
-                                    <div style="padding: 8px 0; padding-left: 25px; position: relative;">
-                                        <span style="position: absolute; left: 0; font-weight: 700;">✓</span>
+                                    <div style="padding: 8px 0; padding-left: 25px; position: relative; color: rgba(207,207,207,0.85);">
+                                        <span style="position: absolute; left: 0; font-weight: 700; color: #B8A080;">&#10003;</span>
                                         ${f}
                                     </div>
                                 `).join('')}
                             </div>
-                            <p style="margin-top: 20px; font-size: 1.1em; font-weight: 600;">🚀 ${data.automation_teaser.availability || ''}</p>
+                            <p style="margin-top: 20px; font-size: 1.1em; font-weight: 700; color: rgba(207,207,207,0.85);">${data.automation_teaser.availability || ''}</p>
                         </div>
                     ` : ''}
-                    
+
                     ${data.disclaimer ? `
-                        <div style="background: #fef3c7; border: 2px solid #f59e0b; padding: 20px; border-radius: 10px; margin-top: 30px;">
-                            <div style="font-weight: 700; color: #f59e0b; margin-bottom: 10px;">⚖️ 重要な免責事項</div>
-                            <p style="white-space: pre-line;">${data.disclaimer}</p>
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 20px; margin-top: 30px;">
+                            <div style="font-weight: 700; color: rgba(207,207,207,0.4); margin-bottom: 10px; letter-spacing: 0.1em;">免責事項</div>
+                            <p style="white-space: pre-line; color: rgba(207,207,207,0.4); font-size: 0.9em;">${data.disclaimer}</p>
                         </div>
                     ` : ''}
-                    
-                    <div style="background: #dc2626; color: white; padding: 20px; text-align: center; font-size: 1.3em; font-weight: 700; border-radius: 10px; margin-top: 20px;">
-                        🔥 今すぐ行動を開始してください
+
+                    <div style="background: transparent; color: #B8A080; padding: 20px; text-align: center; font-size: 1.3em; font-weight: 900; margin-top: 20px; letter-spacing: 0.15em; border: 1px solid #B8A080;">
+                        設計図の実行を開始せよ
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #06C755 0%, #04a847 100%); color: white; padding: 30px; border-radius: 15px; margin-top: 25px; text-align: center;">
-                        <div style="font-size: 1.5em; font-weight: 800; margin-bottom: 10px;">📲 LINE公式で最新情報を受け取る</div>
-                        <p style="font-size: 1em; opacity: 0.95; margin-bottom: 8px;">ロードマップの進め方や最新AI副業情報を配信中</p>
+                    <div style="background: linear-gradient(135deg, #06C755 0%, #04a847 100%); color: white; padding: 30px; margin-top: 25px; text-align: center;">
+                        <div style="font-size: 1.5em; font-weight: 800; margin-bottom: 10px;">LINE公式で戦略アップデートを受け取る</div>
+                        <p style="font-size: 1em; opacity: 0.95; margin-bottom: 8px;">Oracle Engineの最新情報を配信中</p>
                         <p style="font-size: 0.9em; opacity: 0.85; margin-bottom: 20px;">友だち追加は無料・いつでもブロックOK</p>
-                        <a href="https://lin.ee/afZTALB" target="_blank" rel="noopener" style="display: inline-block; padding: 16px 40px; background: white; color: #06C755; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.15em; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">
+                        <a href="https://lin.ee/afZTALB" target="_blank" rel="noopener" style="display: inline-block; padding: 16px 40px; background: white; color: #06C755; text-decoration: none; font-weight: 800; font-size: 1.15em; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">
                             友だち追加する
                         </a>
                     </div>
 
                     <div style="margin-top: 30px; text-align: center;">
-                        <p style="font-weight: 600; margin-bottom: 15px; color: #1e3c72;">診断結果をシェアする</p>
+                        <p style="font-weight: 600; margin-bottom: 15px; color: rgba(207,207,207,0.6);">戦略書をシェアする</p>
                         <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                            <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent('Oracle Engineで診断したら「' + (data.archetype || '') + '」タイプだった！MBTIに合ったAI副業ロードマップが無料で見れる🔮')}&url=${encodeURIComponent('https://oracle-engine-uaes.onrender.com/')}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; background: #000; color: white; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9em;">𝕏 ポスト</a>
-                            <a href="https://social-plugins.line.me/lineit/share?url=${encodeURIComponent('https://oracle-engine-uaes.onrender.com/')}&text=${encodeURIComponent('Oracle Engineで「' + (data.archetype || '') + '」タイプと診断されたよ！やってみて🔮')}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; background: #06C755; color: white; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9em;">LINE 送る</a>
+                            <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent('Oracle Engineで「' + (data.archetype || '') + '」タイプの戦略書を取得。個の資質を資本へ変える知能設計。')}&url=${encodeURIComponent('https://oracle-engine-uaes.onrender.com/')}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; background: transparent; color: #E0E0E0; text-decoration: none; font-weight: 700; font-size: 0.9em; letter-spacing: 0.05em; border: 1px solid rgba(184,160,128,0.4);">X Post</a>
+                            <a href="https://social-plugins.line.me/lineit/share?url=${encodeURIComponent('https://oracle-engine-uaes.onrender.com/')}&text=${encodeURIComponent('Oracle Engineで「' + (data.archetype || '') + '」タイプの戦略書を取得。')}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; background: #06C755; color: white; text-decoration: none; font-weight: 700; font-size: 0.9em;">LINE</a>
                         </div>
                     </div>
 
-                    <div style="margin-top: 30px; text-align: center; padding-top: 20px; border-top: 1px solid #e5e7eb;">
-                        <a href="/privacy" style="color: #999; font-size: 0.85em; text-decoration: none;">プライバシーポリシー</a>
+                    <div style="margin-top: 30px; text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06);">
+                        <span style="color: #B8A080; font-size: 0.85em;">Powered by SUMI X</span>
+                        <span style="color: rgba(207,207,207,0.15); margin: 0 10px;">|</span>
+                        <a href="/privacy" style="color: rgba(207,207,207,0.3); font-size: 0.85em; text-decoration: none;">プライバシーポリシー</a>
                     </div>
                     ${AFFILIATE_PIXEL}
                 </div>
@@ -969,7 +1049,7 @@
             const text = document.getElementById(`prompt-text-${index}`).innerText;
             navigator.clipboard.writeText(text).then(() => {
                 const feedback = document.getElementById(`copy-feedback-${index}`);
-                feedback.textContent = 'コピーしました！';
+                feedback.textContent = 'コピーしました';
                 feedback.style.opacity = '1';
                 setTimeout(() => { feedback.style.opacity = '0'; }, 2000);
             });
@@ -978,7 +1058,7 @@
         function toggleAccordion(index) {
             const content = document.getElementById(`content-${index}`);
             const icon = document.getElementById(`icon-${index}`);
-            
+
             if (content.style.display === 'none' || content.style.display === '') {
                 content.style.display = 'block';
                 icon.classList.add('rotated');

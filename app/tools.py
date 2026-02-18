@@ -33,9 +33,9 @@ class TrendSearchEngine:
             List of search results with title, snippet, and link
         """
         queries = [
-            f"AI副業 {year}年 最新トレンド",
+            f"AI事業戦略 {year}年 最新トレンド",
             f"AI automation business {year} {month}",
-            f"AI副業 稼ぎ方 {year}",
+            f"AI ビジネス 収益化 {year}",
             f"AI agent business opportunities {year}",
             "ChatGPT API ビジネス 自動化",
             f"AI video generation business {year}",
@@ -100,7 +100,7 @@ class TrendSearchEngine:
         else:
             queries = [
                 "cloud automation tools no-code 2026",
-                "スマホ完結 AI副業 ツール",
+                "スマホ完結 AI ビジネス ツール",
                 "mobile-first AI automation platforms",
             ]
         

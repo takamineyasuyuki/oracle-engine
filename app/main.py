@@ -38,13 +38,13 @@ engine = OracleEngine()
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan manager"""
-    logger.info("🚀 Oracle Engine - Phase 1 starting up...")
+    logger.info("Oracle Engine starting up...")
     logger.info("=" * 60)
-    logger.info("System initialized by: 高嶺泰志")
-    logger.info("Mission: MBTI-based AI business strategy engine")
+    logger.info("System initialized by: SUMI X")
+    logger.info("Mission: Individual potential capitalization engine")
     logger.info("=" * 60)
-    logger.info("🌐 UI available at: http://127.0.0.1:8000/")
-    logger.info("📚 API docs at: http://127.0.0.1:8000/docs")
+    logger.info("UI available at: http://127.0.0.1:8000/")
+    logger.info("API docs at: http://127.0.0.1:8000/docs")
     logger.info("=" * 60)
     yield
     logger.info("Oracle Engine shutting down...")
@@ -81,7 +81,7 @@ async def root():
     return {
         "message": "Oracle Engine - Phase 1",
         "status": "operational",
-        "creator": "高嶺泰志",
+        "creator": "SUMI X",
         "note": "index.html not found. Please access API docs at /docs",
         "endpoints": {
             "health": "/health",
@@ -170,7 +170,7 @@ async def diagnose(request: Request, body: DiagnosisRequest):
         device_str = body.device.value
 
         logger.info("=" * 80)
-        logger.info(f"📊 NEW DIAGNOSIS REQUEST")
+        logger.info(f"NEW DIAGNOSIS REQUEST")
         logger.info(f"   MBTI: {body.mbti.value}")
         logger.info(f"   Device: {device_str}")
         logger.info(f"   Archetype: {archetype.value}")
@@ -184,7 +184,7 @@ async def diagnose(request: Request, body: DiagnosisRequest):
             psychometric_responses=body.psychometric_responses
         )
         
-        logger.info(f"✅ Diagnosis completed successfully")
+        logger.info(f"Diagnosis completed successfully")
         logger.info(f"   Trends found: {len(result.latest_trends)}")
         logger.info(f"   Roadmap steps: {len(result.strategic_roadmap)}")
         logger.info(f"   Automation tool: {result.automation_teaser.tool_name} ({result.automation_teaser.progress_percentage}%)")
@@ -193,7 +193,7 @@ async def diagnose(request: Request, body: DiagnosisRequest):
         return result
         
     except Exception as e:
-        logger.error(f"❌ Diagnosis failed: {e}", exc_info=True)
+        logger.error(f"Diagnosis failed: {e}", exc_info=True)
         raise HTTPException(
             status_code=500,
             detail=f"Diagnosis generation failed: {str(e)}"
